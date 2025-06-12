@@ -4,8 +4,8 @@ import numpy as np
 
 # import the model with error handling
 try:
-    pipe = pickle.load(open(r"E:\Sujeet\1.DU MSC\Semester 1\Data Mining\Projeact\Final Submission\App\laptop-price-predictor\laptop-price-predictor\pipe.pkl",'rb'))
-    df = pickle.load(open(r"E:\Sujeet\1.DU MSC\Semester 1\Data Mining\Projeact\Final Submission\App\laptop-price-predictor\laptop-price-predictor\df.pkl",'rb'))
+    pipe = pickle.load(open(r"pipe.pkl",'rb'))
+    df = pickle.load(open(r"df.pkl",'rb'))
     model_loaded = True
 except Exception as e:
     st.error(f"Error loading model: {e}")
