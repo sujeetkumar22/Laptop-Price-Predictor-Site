@@ -73,7 +73,7 @@ if model_loaded:
 
             query = query.reshape(1,12)
             predicted_price = int(np.exp(pipe.predict(query)[0]))
-            st.title(f"The predicted price of this configuration is ${predicted_price:,}")
+            st.title(f"The predicted price of this configuration is Rs.{predicted_price:,}")
         except Exception as e:
             st.error(f"Error making prediction: {e}")
 else:
