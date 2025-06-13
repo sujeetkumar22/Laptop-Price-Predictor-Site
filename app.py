@@ -12,7 +12,9 @@ except Exception as e:
     st.error("Please upgrade scikit-learn to version 1.6.1 or retrain the model with your current version.")
     model_loaded = False
 
-st.title("Laptop Predictor")
+st.title("Laptop Price Predictor")
+st.write("Please fill in the details below to get the predicted price of a laptop." \
+" This app predicts the price of a laptop based on its specifications")
 
 if model_loaded:
     # brand
@@ -76,3 +78,29 @@ if model_loaded:
             st.error(f"Error making prediction: {e}")
 else:
     st.warning("Model not loaded. Please fix the version compatibility issue first.")
+
+# Add custom CSS styling
+st.markdown("""
+    <style>
+        .main {
+            background-color: #f5f7fa;
+        }
+        .stButton>button {
+            background-color: #416ab0;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            padding: 0.5em 2em;
+        }
+        .stSelectbox, .stNumberInput, .stSlider {
+            background-color: #15171a;
+            border-radius: 8px;
+        }
+        .stTitle {
+            color: #2d3a4b;
+        }
+        .stMarkdown {
+            font-size: 1.1em;
+        }
+    </style>
+""", unsafe_allow_html=True)
